@@ -3,6 +3,10 @@ name: Deploy
 on:
   workflow_dispatch: # Allows manual triggering of the workflow
 
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
 jobs:
   deploy:
 
@@ -24,5 +28,11 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Start application
-      run: npm start
+    - name: Install PM2
+      run: npm install -g pm2
+
+    - name: Start application with PM2
+      run: pm2 start npm --name "my-app" -- start
+
+    - name: Save PM2 process list
+      run: pm2 save
