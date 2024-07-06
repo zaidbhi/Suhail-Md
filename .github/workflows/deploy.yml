@@ -1,17 +1,10 @@
-name: Node.js CI
+name: Deploy
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  schedule:
-    - cron: '0 */5 * * *' # This triggers the workflow every 5 hours
+  workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
-  build:
+  deploy:
 
     runs-on: ubuntu-latest
 
