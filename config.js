@@ -100,7 +100,7 @@ module.exports = {
 
 
 
-global.ELEVENLAB_API_KEY = process.env.ELEVENLAB_API_KEY || "";
+global.ELEVENLAB_API_KEY = process.env.ELEVENLAB_API_KEY || "sk-proj-Lh2DAkXG72SO9F1KtCWlT3BlbkFJ74qT5UE5tIjTrOrr2OQN";
 global.aitts_Voice_Id = process.env.AITTS_ID|| "37";
 
 
